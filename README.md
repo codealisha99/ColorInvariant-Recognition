@@ -364,11 +364,9 @@ Real multi-colourway pairs with design IDs; explicit hard-negative mining; multi
 - **Action:** metric-learning formulation; MobileNetV3-Small → 128-d L2 embedding; SupCon with P×K sampling; Lab hue/saturation augmentation with same-palette hard negatives; retrieval/verification/stress evals vs no-color and frozen-ImageNet baselines.
 - **Result:** 90.91% Rank-1, 100% Rank-5, 95.45% mAP, 99.19% ROC-AUC, 3.03% EER; color augmentation alone added +27.27pp Rank-1.
 
-## 49. Interview Explanation
 
-"I used MobileNetV3-Small as the pretrained visual backbone. Its 576-dimensional pooled representation goes through a 576-to-128 projection head with BatchNorm and L2 normalization to produce the retrieval embedding. I fine-tuned this using supervised contrastive learning with P×K sampling and deliberately introduced Lab-based color transformations and same-palette hard negatives to make the embedding invariant to color while preserving motif differences. At inference, I use cosine similarity for gallery retrieval and validation-selected thresholding for pair verification."
 
-## 50. Final Results Summary
+## 49. Final Results Summary
 
 | Experiment | Rank-1 | Rank-5 | mAP | ROC-AUC | EER |
 |---|---:|---:|---:|---:|---:|
@@ -386,6 +384,6 @@ Main model:
 ~2–5 ms Apple GPU/MPS latency
 ```
 
-## 51. Final Takeaway
+## 50. Final Takeaway
 
 Color is a shortcut; the training distribution removes it. Same-palette hard negatives plus disjoint-hue evaluation prove the embedding tracks motif geometry, with honest, measured limits.
