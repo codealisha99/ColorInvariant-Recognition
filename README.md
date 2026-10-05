@@ -29,7 +29,7 @@ The evaluation therefore measures robustness to controlled colour transformation
 
 ## 5. Approach Note
 
-444 characters. Form limit is 500.
+
 
 ```text
 MobileNetV3-Small maps a 224px crop to a 128-d L2-normalized embedding. Each photo is one design. Positives are its crops under Lab hue rotation and saturation change; other designs in the batch are negatives. Supervised contrastive loss, PK sampling, flip and mild blur. Cosine similarity ranks the gallery and verifies pairs. ImageNet initialization, disclosed. Real colorway labels are absent, so palettes are synthetic and the eval says so.
@@ -333,7 +333,7 @@ python -m src.efficiency --checkpoint runs/color/best.pt
 
 `notebooks/deeplure_saree.ipynb` (37 cells, 19 code, 16 with stored outputs) is the primary submission notebook: environment setup → authorized dataset download → source reconstruction → 40-epoch training → identification + verification eval → retrieval strips → hue-sweep demo → verification detail with ROC → efficiency. `notebooks/submission.ipynb` is the local walkthrough. Kaggle settings: GPU on, Internet on, notebook Public, then Save & Run All; paste the URL into the assignment form.
 
-> Kaggle notebook URL: _TODO — paste the public notebook link here after Save & Run All_
+> Kaggle notebook URL: https://www.kaggle.com/code/alishaaakarmaa/notebook1e4ee1c6a1/edit
 
 Requires final Kaggle Save & Run All verification — remote execution has not been confirmed from this environment.
 
