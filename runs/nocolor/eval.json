@@ -1,0 +1,72 @@
+{
+  "checkpoint": "runs/nocolor/best.pt",
+  "epoch": 16,
+  "representation": "fine-tuned projection, 128-d",
+  "embedding_dim": 128,
+  "protocol": {
+    "unit": "one source photo = one design",
+    "colorways": "synthetic Lab chroma rotation; the corpus has no colorway labels",
+    "gallery_hue_deg": 40.0,
+    "query_hue_deg": 160.0,
+    "gallery_crop": "center 224 of a 360px resize, hue +40",
+    "query_crop": "center 224 shifted 48px and mirrored, hue +160",
+    "split": "60/20/20 by photo, seed 42",
+    "corpus": "Drive handloom_sarees only (165 photos). normal_sarees was empty in the public folder. Kaggle weave-class set is not design-level and was not used.",
+    "verification_threshold": "EER threshold fit on val",
+    "val_eer_threshold": 0.48,
+    "baseline": false
+  },
+  "val": {
+    "split": "val",
+    "designs": 33,
+    "cross_palette_identification": {
+      "rank1": 0.8181818127632141,
+      "rank5": 0.939393937587738,
+      "mAP": 0.8853305578231812
+    },
+    "original_query_identification": {
+      "rank1": 0.8484848737716675,
+      "rank5": 0.939393937587738,
+      "mAP": 0.8989899158477783
+    },
+    "cross_palette_verification": {
+      "roc_auc": 0.9687213039485767,
+      "eer": 0.09232954545454546,
+      "eer_threshold": 0.48,
+      "tar_at_far_1pct": 0.6666666666666666
+    },
+    "same_palette_stress": {
+      "rank1": 0.8484848737716675,
+      "rank5": 0.9696969985961914,
+      "mAP": 0.9128788113594055
+    }
+  },
+  "test": {
+    "split": "test",
+    "designs": 33,
+    "cross_palette_identification": {
+      "rank1": 0.6363636255264282,
+      "rank5": 0.9090909361839294,
+      "mAP": 0.777104377746582
+    },
+    "original_query_identification": {
+      "rank1": 0.7575757503509521,
+      "rank5": 0.939393937587738,
+      "mAP": 0.8502525687217712
+    },
+    "cross_palette_verification": {
+      "roc_auc": 0.9684056473829201,
+      "eer": 0.09090909090909091,
+      "eer_threshold": 0.5,
+      "tar_at_far_1pct": 0.5151515151515151,
+      "tar_at_val_threshold": 0.9090909090909091,
+      "far_at_val_threshold": 0.10890151515151515,
+      "val_threshold": 0.48
+    },
+    "same_palette_stress": {
+      "rank1": 0.8787878751754761,
+      "rank5": 1.0,
+      "mAP": 0.939393937587738
+    }
+  }
+}

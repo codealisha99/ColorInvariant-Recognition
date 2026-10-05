@@ -1,0 +1,14 @@
+.venv/
+data/
+__pycache__/
+*.pyc
+.DS_Store
+.ipynb_checkpoints/
+
+# Ignore run scratch. Keep the checkpoints and the metric files.
+runs/**
+!runs/*/
+!runs/*/best.pt
+!runs/*/eval.json
+!runs/*/efficiency.json
+!runs/*/history.json

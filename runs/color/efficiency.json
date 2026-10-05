@@ -1,0 +1,12 @@
+{
+  "backbone": "torchvision MobileNetV3-Small, ImageNet-1K weights, then fine-tuned",
+  "parameters": 1000992,
+  "parameters_millions": 1.001,
+  "conv_linear_flops": 109940608,
+  "conv_linear_gflops": 0.11,
+  "embedding_dim": 128,
+  "input": "1x3x224x224",
+  "latency_ms_batch1": 4.96,
+  "device": "mps",
+  "notes": "FLOPs count multiply-adds in Conv2d and Linear only."
+}
